@@ -1,3 +1,7 @@
 [submodule "multi_branch"]
 	path = multi_branch
 	url = git@gitlab.com:xmarts/apps/multi_branch.git
+[submodule "pos_stocks"]
+	path = pos_stocks
+	url = git@gitlab.com:xmarts/apps/pos_stocks.git
+	branch = 13.0
