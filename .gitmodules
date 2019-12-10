@@ -5,3 +5,7 @@
 	path = pos_stocks
 	url = git@gitlab.com:xmarts/apps/pos_stocks.git
 	branch = 13.0
+[submodule "credit_limit_alert"]
+	path = credit_limit_alert
+	url = git@gitlab.com:xmarts/xmarts-apps/credit_limit_alert.git
+	branch = 13.0
