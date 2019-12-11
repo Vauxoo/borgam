@@ -9,3 +9,14 @@
 	path = credit_limit_alert
 	url = git@gitlab.com:xmarts/xmarts-apps/credit_limit_alert.git
 	branch = 13.0
+[submodule "wk_coupons"]
+	path = wk_coupons
+	url = git@gitlab.com:xmarts/apps/wk_coupons.git
+[submodule "pos_coupons"]
+	path = pos_coupons
+	url = git@gitlab.com:xmarts/apps/pos_coupons.git
+	branch = 13.0
+[submodule "pos_gift_card"]
+	path = pos_gift_card
+	url = git@gitlab.com:xmarts/apps/pos_gift_card.git
+	branch = 13.0
