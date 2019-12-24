@@ -24,3 +24,6 @@
 	path = git@gitlab.com:xmarts/apps/bi_pos_multi_currency
 	url = git@gitlab.com:xmarts/apps/bi_pos_multi_currency.git
 	branch = 13.0
+[submodule "xmarts_pos_invoice"]
+	path = xmarts_pos_invoice
+	url = git@gitlab.com:xmarts/xmarts-apps/xmarts_pos_invoice.git
