@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pos_config_view_form_default_customer_inherit">
+            <field name="name">pos.config.form.default.customer.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"></field>
+            <field name="arch" type="xml">
+            	<xpath expr="//h2[@name='order']" position="before">
+            		<div class="row mt16" id="default_customer">
+                        <label for="default_customer" class="col-md-2"/>
+                        <field name="default_customer"/>
+                    </div>
+            	</xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
