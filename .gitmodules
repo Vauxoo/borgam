@@ -23,3 +23,7 @@
 [submodule "xmarts_pos_invoice"]
 	path = xmarts_pos_invoice
 	url = git@gitlab.com:xmarts/xmarts-apps/xmarts_pos_invoice.git
+[submodule "credit_limit_alert"]
+	path = credit_limit_alert
+	url = git@gitlab.com:xmarts/xmarts-apps/credit_limit_alert.git
+	branch = 13.0
