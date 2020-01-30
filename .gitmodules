@@ -12,10 +12,6 @@
 	path = pos_gift_card
 	url = git@gitlab.com:xmarts/apps/pos_gift_card.git
 	branch = 13.0
-[submodule "pos_product_by_lot_number"]
-	path = pos_product_by_lot_number
-	url = git@gitlab.com:xmarts/apps/pos_product_by_lot_number.git
-	branch = 13.0
 [submodule "git@gitlab.com:xmarts/apps/bi_pos_multi_currency"]
 	path = git@gitlab.com:xmarts/apps/bi_pos_multi_currency
 	url = git@gitlab.com:xmarts/apps/bi_pos_multi_currency.git
