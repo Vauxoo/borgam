@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<templates id="template" xml:space="preserve">
+
+
+  <t t-name="WkAlertPopUp">
+    <div class="modal-dialog">
+      <div class="popup popup-alert">
+        <p class="title" style="font-size:30px;"><t t-esc=" widget.options.title || 'Alert' "/></p>
+        <p class="body text-center"><t t-esc=" widget.options.body || 'Alert' "/></p>
+        <div class="footer">
+          <div class="button cancel">
+            Ok
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+
+<t t-extend="PackLotLinePopupWidget">
+  <t t-jquery=".packlot-lines " t-operation="append">
+      <div class="selection-lot">
+        <table>
+            <tr>
+                <td>
+                    <div class='lot-holder'>
+                        <ul>
+                            <li>
+                            <span class='lot-name'></span>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+      </div>
+      <div class="error-message">
+        <div class="lot-warning">Some of the lot/serial numbers do not exist!</div> 
+          <div class="check-input"><input class="checkbox-input" type="checkbox"></input><span id="check_content">Do you want to continue with the same?</span></div>
+    </div>
+    <div class="duplicate-serial">
+        <div class="lot-warning">You have entered duplicate serial numbers!</div>
+    </div>
+  </t>
+</t>
+
+</templates>
