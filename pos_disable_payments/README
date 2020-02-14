@@ -1,0 +1,4 @@
+
+Version 13.0.1.0 : (24/01/20)
+		- Add pos access rights functionality in employee.
+		- Solve the issue of disable payment when customer change.
