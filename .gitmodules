@@ -19,3 +19,6 @@
 [submodule "xmarts_pos_invoice"]
 	path = xmarts_pos_invoice
 	url = git@gitlab.com:xmarts/xmarts-apps/xmarts_pos_invoice.git
+[submodule "global_invoice_pos"]
+	path = global_invoice_pos
+	url = git@gitlab.com:xmarts/apps/global_invoice_pos.git
