@@ -22,3 +22,6 @@
 [submodule "global_invoice_pos"]
 	path = global_invoice_pos
 	url = git@gitlab.com:xmarts/apps/global_invoice_pos.git
+[submodule "xml_invoice"]
+	path = xml_invoice
+	url = git@gitlab.com:xmarts/xmarts-apps/xml_invoice.git
