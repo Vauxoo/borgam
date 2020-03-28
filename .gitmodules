@@ -26,11 +26,6 @@
 	path = xml_invoice
 	url = git@gitlab.com:xmarts/xmarts-apps/xml_invoice.git
 
-[submodule "raulovallet/l10n-mx-addons/l10n_mx_pos_global_invoice"]
-	path = raulovallet/l10n-mx-addons/l10n_mx_pos_global_invoice
-	url = git@github.com:raulovallet/l10n-mx-addons.git
-	branch = 13.0
-
 [submodule "l10n_mx_pos_global_invoice"]
 	path = l10n_mx_pos_global_invoice
 	url = git@github.com:raulovallet/l10n-mx-addons.git
