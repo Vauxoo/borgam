@@ -30,3 +30,8 @@
 	path = raulovallet/l10n-mx-addons/l10n_mx_pos_global_invoice
 	url = git@github.com:raulovallet/l10n-mx-addons.git
 	branch = 13.0
+
+[submodule "l10n_mx_pos_global_invoice"]
+	path = l10n_mx_pos_global_invoice
+	url = git@github.com:raulovallet/l10n-mx-addons.git
+	branch = 13.0
