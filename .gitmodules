@@ -26,3 +26,8 @@
 [submodule "xml_invoice"]
 	path = xml_invoice
 	url = git@gitlab.com:xmarts/xmarts-apps/xml_invoice.git
+
+[submodule "l10n-dominicana"]
+	path = l10n-dominicana
+	url = git@github.com:odoo-dominicana/l10n-dominicana.git
+	branch = 13.0-xmarts-ro
