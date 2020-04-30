@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate='1'>
+        <record id="product.product_comp_rule" model="ir.rule">
+            <field name="domain_force">['&amp;', '|', ('company_id', 'in', company_ids), ('company_id', '=', False),('restricted_company_id','!=', company_id)]</field>
+        </record>
+    </data>
+</odoo>
