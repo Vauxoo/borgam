@@ -31,3 +31,8 @@
 	path = l10n-dominicana
 	url = git@github.com:odoo-dominicana/l10n-dominicana.git
 	branch = 13.0
+
+[submodule "xmarts/l10n-mx-xml-invoice"]
+	path = xmarts/l10n-mx-xml-invoice
+	url = git@github.com:xmarts/l10n-mx-xml-invoice.git
+	branch = 13.0-staging-ro
