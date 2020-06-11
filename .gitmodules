@@ -30,3 +30,8 @@
 	path = xmarts/l10n-mx-xml-invoice
 	url = git@github.com:xmarts/l10n-mx-xml-invoice.git
 	branch = 13.0-staging-ro
+
+[submodule "xmarts/l10n-mx-pos-global-invoice"]
+	path = xmarts/l10n-mx-pos-global-invoice
+	url = git@github.com:xmarts/l10n-mx-pos-global-invoice.git
+	branch = 13.0
