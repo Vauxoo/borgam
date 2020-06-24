@@ -45,3 +45,4 @@ class StockPicking(models.Model):
                             'product_uom_id': move.product_uom_id.id,
                         })
                 po_moves._recompute_state()
+            return
