@@ -19,7 +19,9 @@ class StockPicking(models.Model):
                 StockMoveLine = self.env['stock.move.line'].sudo()
                 StockProdLot = self.env['stock.production.lot'].sudo()
                 po_moves = po.order_line.mapped('move_ids').filtered(
-                    lambda m: m.state in ['confirmed', 'partially_available', 'assigned'])
+                    lambda m: m.state in ['confirmed', 'partially_available', 'assigned'] and \
+                              m.product_id in self.move_line_ids.mapped('product_id'))
+                po_moves._do_unreserve()
                 for move in self.move_line_ids:
                     po_move = po_moves.filtered(
                         lambda l: l.product_id == move.product_id and l.product_uom_qty == move.move_id.product_uom_qty)
