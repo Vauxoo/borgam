@@ -18,3 +18,9 @@ issue solve :-
 	- payment show every user for every company.
 	- if not allowed branch added in config then its not added in journal.
 	- only allowed branches added in pos config.
+
+
+date 10th july 2020
+version 13.0.0.4
+issue solve :-
+	- report issue generate in odoo.sh while installation

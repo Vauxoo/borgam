@@ -18,6 +18,7 @@ class ResBranch(models.Model):
 		args += [('company_id', 'in',user_id.company_ids.ids)]
 		# if 'js' in self.env.context:
 		# 	args += [('id','in',user_id.branch_ids.ids)]
-		if 'allow_branch' not in self.env.context:
-			args += [('id','in',user_id.branch_ids.ids)]
+		# if 'allow_branch' not in self.env.context:
+		# 	print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh" , user_id.branch_ids)
+		# 	args += [('id','in',user_id.branch_ids.ids)]
 		return super(ResBranch, self)._name_search(name, args, operator, limit, name_get_uid=name_get_uid) 
