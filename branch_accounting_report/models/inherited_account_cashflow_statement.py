@@ -23,6 +23,7 @@ class AccountCashFlowReportInherit(models.AbstractModel):
         '''
         new_options = self._get_options_current_period(options)
         selected_journals = self._get_options_journals(options)
+        user_id = self.env['res.users'].browse(self._context.get('uid'))
         account_query = ''
         if options.get('branch_ids'):
             branch_list = options.get('branch_ids')
@@ -32,6 +33,9 @@ class AccountCashFlowReportInherit(models.AbstractModel):
             else:
                 branches = tuple(list(set(branch_list)))
                 account_query = """ AND account_move_line.branch_id in %s""" % (str(tuple(branches)))
+        else:
+            branches = tuple(list(set(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)))
+            account_query = """ AND account_move_line.branch_id in %s""" % (str(tuple(branches)))            
 
         # Fetch liquidity accounts:
         # Accounts being used by at least one bank / cash journal.
@@ -96,7 +100,7 @@ class AccountCashFlowReportInherit(models.AbstractModel):
 
         account_credit_query = ''
         account_debit_query = ''
-
+        user_id = self.env['res.users'].browse(self._context.get('uid'))
         if options.get('branch_ids'):
             branch_list = options.get('branch_ids')
             if len(branch_list) == 1:
@@ -107,6 +111,10 @@ class AccountCashFlowReportInherit(models.AbstractModel):
                 branches = tuple(list(set(branch_list)))
                 account_credit_query = """ AND credit_line.branch_id in %s""" % (str(tuple(branches)))
                 account_debit_query = """ AND debit_line.branch_id in %s""" % (str(tuple(branches)))
+        else:
+            branches = tuple(list(set(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)))
+            account_credit_query = """ AND credit_line.branch_id in %s""" % (str(tuple(branches)))
+            account_debit_query = """ AND debit_line.branch_id in %s""" % (str(tuple(branches)))
 
         query = '''
             SELECT
@@ -162,6 +170,9 @@ class AccountCashFlowReportInherit(models.AbstractModel):
             else:
                 branches = tuple(list(set(branch_list)))
                 account_query = """ AND line.branch_id in %s""" % (str(tuple(branches)))
+        else:
+            branches = tuple(list(set(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)))
+            account_query = """ AND line.branch_id in %s""" % (str(tuple(branches)))            
 
         query = '''
             SELECT
@@ -202,7 +213,7 @@ class AccountCashFlowReportInherit(models.AbstractModel):
 
         account_credit_query = ''
         account_debit_query = ''
-
+        user_id = self.env['res.users'].browse(self._context.get('uid'))
         if options.get('branch_ids'):
             branch_list = options.get('branch_ids')
             if len(branch_list) == 1:
@@ -213,7 +224,10 @@ class AccountCashFlowReportInherit(models.AbstractModel):
                 branches = tuple(list(set(branch_list)))
                 account_credit_query = """ AND credit_line.branch_id in %s""" % (str(tuple(branches)))
                 account_debit_query = """ AND debit_line.branch_id in %s""" % (str(tuple(branches)))
-
+        else:
+            branches = tuple(list(set(user_id.branch_ids.ids)))
+            account_credit_query = """ AND credit_line.branch_id in %s""" % (str(tuple(branches)))
+            account_debit_query = """ AND debit_line.branch_id in %s""" % (str(tuple(branches)))            
 
         if not payment_move_ids:
             return reconciled_percentage_per_move
@@ -279,6 +293,9 @@ class AccountCashFlowReportInherit(models.AbstractModel):
             else:
                 branches = tuple(list(set(branch_list)))
                 account_query = """ AND line.branch_id in %s""" % (str(tuple(branches)))
+        else:
+            branches = tuple(list(set(user_id.branch_ids.ids)))
+            account_query = """ AND line.branch_id in %s""" % (str(tuple(branches)))            
 
         query = '''
             SELECT
@@ -382,7 +399,9 @@ class AccountCashFlowReportInherit(models.AbstractModel):
             else:
                 branches = tuple(list(set(branch_list)))
                 account_query = """ AND ("account_move_line"."branch_id" in %s) """ % (str(tuple(branches)))
-
+        else:
+            branches = tuple(list(set(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)))
+            account_query = """ AND ("account_move_line"."branch_id" in %s) """ % (str(tuple(branches)))
         query = '''
             SELECT
                 account_move_line.account_id,

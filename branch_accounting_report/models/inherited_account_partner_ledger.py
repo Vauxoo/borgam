@@ -40,7 +40,11 @@ class AccountPartnerLedger(models.AbstractModel):
             domain += [
                 ('branch_id','in',options.get('branch_ids') )
             ]
-
+        else:
+            branches = self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids
+            domain += [
+                ('branch_id','in',branches )
+            ]
         return domain
 
 

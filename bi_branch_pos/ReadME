@@ -1,0 +1,20 @@
+Version:-
+
+Commit Date -22-05-2019 
+13.0.0.1 : Made changes in security file and overriden report with super().
+
+
+
+date 30th june 2020
+version 13.0.0.2
+issue solve:-
+	- remove m2m field in pos config , added m2o in pos config.
+	- if not configure branch in config then use user branch.
+
+
+date 1sy july 2020
+version 13.0.0.3
+issue solve :-
+	- payment show every user for every company.
+	- if not allowed branch added in config then its not added in journal.
+	- only allowed branches added in pos config.

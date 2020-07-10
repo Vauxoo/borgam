@@ -14,12 +14,15 @@ class report_account_general_ledger(models.AbstractModel):
     @api.model
     def _get_options_domain(self, options):
         domain = super(report_account_general_ledger, self)._get_options_domain(options)
-
         if options.get('branch') and options.get('branch_ids'):
             domain += [
                 ('branch_id','in',options.get('branch_ids') )
             ]
-
+        else:
+            branches = self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids
+            domain += [
+                ('branch_id','in',branches )
+            ]
         return domain
 
 

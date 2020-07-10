@@ -155,9 +155,8 @@ class AccountFinancialReportLine(models.Model):
             res['currency_id'] = self.env.company.currency_id.id
             return res
 
-
+        where_clause += 'and ("account_move_line"."branch_id" in ('
         if self._context.get('branch_ids'):
-            where_clause += 'and ("account_move_line"."branch_id" in ('
             for a in range(len(self._context.get('branch_ids'))):
                 where_clause +='%s,'
             where_clause = where_clause[:-1]
@@ -165,6 +164,14 @@ class AccountFinancialReportLine(models.Model):
             
             for a in self._context.get('branch_ids'):
                 where_params.append(int(a))
+        else:
+            for a in range(len(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)):
+                where_clause +='%s,'
+            where_clause = where_clause[:-1]
+            where_clause += '))'
+            
+            for a in self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids:
+                where_params.append(int(a))            
 
         sql = "SELECT " + select + " FROM " + tables + " WHERE " + where_clause
         self.env.cr.execute(sql, where_params)
@@ -226,15 +233,22 @@ class AccountFinancialReportLine(models.Model):
             tables, where_clause, where_params = aml_obj._query_get(domain=self._get_aml_domain())
             if financial_report.tax_report:
                 where_clause += ''' AND "account_move_line".tax_exigible = 't' '''
-
+            where_clause += 'and ("account_move_line"."branch_id" in ('
             if self._context.get('branch_ids'):
-                where_clause += 'and ("account_move_line"."branch_id" in ('
                 for a in range(len(self._context.get('branch_ids'))):
                     where_clause += '%s,'
                 where_clause = where_clause[:-1]
                 where_clause += '))'
 
                 for a in self._context.get('branch_ids'):
+                    where_params.append(int(a))
+            else:
+                for a in range(len(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)):
+                    where_clause += '%s,'
+                where_clause = where_clause[:-1]
+                where_clause += '))'
+
+                for a in self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids:
                     where_params.append(int(a))
 
             select, params = self._query_get_select_sum(currency_table)
