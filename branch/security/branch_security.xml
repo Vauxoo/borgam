@@ -218,6 +218,23 @@
         <field name="groups" eval="[(4, ref('branch.group_branch_user'))]"/>
     </record>
 
+    <record id="product_template_branch_rule_all" model="ir.rule">
+        <field name="name">Product Template All Branch</field>
+        <field name="model_id" ref="model_product_template"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('branch_id','=',False)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+
+    <record id="product_product_branch_rule_All" model="ir.rule">
+        <field name="name">Product Product Branch All</field>
+        <field name="model_id" ref="product.model_product_product"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('branch_id','=',False)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
     <record id="product_product_branch_manager_rule" model="ir.rule">
         <field name="name">Product Product Branch Manager</field>
         <field name="model_id" ref="product.model_product_product"/>

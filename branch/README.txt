@@ -54,3 +54,9 @@ date 10/7/2020
 version :- 13.0.2.0
 issue solve:-
 	- branch id show blank in users.
+
+
+Date 13th july 2020
+version 13.0.4.0
+issue solve:-
+	- if nothing to given in any user in branch , then user settings not open.
