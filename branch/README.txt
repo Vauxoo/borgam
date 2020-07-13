@@ -60,3 +60,9 @@ Date 13th july 2020
 version 13.0.4.0
 issue solve:-
 	- if nothing to given in any user in branch , then user settings not open.
+
+
+Date 13th july 2020
+version 13.0.5.0
+issue solve:-
+ - pos not open
