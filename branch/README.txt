@@ -66,3 +66,15 @@ Date 13th july 2020
 version 13.0.5.0
 issue solve:-
  - pos not open
+
+
+Date 24th july 2020
+version 13.0.5.1
+issue solve:-
+ - branch domain added properly.
+
+
+Date 28th july 2020
+version 13.0.5.2
+issue solve:-
+	- multi company record rule conflict with out user record rules , so added global record rule for sale report , account report , purchase report.

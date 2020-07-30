@@ -24,3 +24,14 @@ date 10th july 2020
 version 13.0.0.4
 issue solve :-
 	- report issue generate in odoo.sh while installation
+
+Date 24th july 2020
+version 13.0.0.5
+issue solve:-
+	- when create invoice from pos order , getting default branch.
+
+
+Date 28th july 2020
+version 13.0.0.6
+issue solve:-
+	- record rules added for pos report.

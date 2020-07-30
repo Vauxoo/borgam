@@ -45,3 +45,4 @@ class AccountMoveLine(models.Model):
     #     return res
 
     branch_id = fields.Many2one('res.branch', string="Branch" ,related = "move_id.branch_id" , store =True)
+    user_id = fields.Many2one('res.users',string = 'users' , related="move_id.user_id", store = True)

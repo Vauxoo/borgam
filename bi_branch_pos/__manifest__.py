@@ -3,7 +3,7 @@
 
 {
     "name" : "Multiple Branch Unit Operation Setup with Point Of Sales in Odoo",
-    "version" : "13.0.0.4",
+    "version" : "13.0.0.6",
     "category" : "Point of Sales",
     "depends" : ['base','point_of_sale','branch'],
     "author": "BrowseInfo",

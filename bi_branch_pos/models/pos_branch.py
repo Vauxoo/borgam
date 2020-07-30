@@ -6,6 +6,8 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
 from odoo.http import request
 from odoo.tools import float_is_zero
+import pytz
+
 
 
 class pos_session(models.Model):
@@ -396,6 +398,30 @@ class pos_order(models.Model):
             'user_id': self.env.uid,
         }
     
+
+
+    def _prepare_invoice_vals(self):
+        self.ensure_one()
+        timezone = pytz.timezone(self._context.get('tz') or self.env.user.tz or 'UTC')
+        vals = {
+            'invoice_payment_ref': self.name,
+            'invoice_origin': self.name,
+            'journal_id': self.session_id.config_id.invoice_journal_id.id,
+            'type': 'out_invoice' if self.amount_total >= 0 else 'out_refund',
+            'ref': self.name,
+            'partner_id': self.partner_id.id,
+            'narration': self.note or '',
+            # considering partner's sale pricelist's currency
+            'currency_id': self.pricelist_id.currency_id.id,
+            'invoice_user_id': self.user_id.id,
+            'invoice_date': self.date_order.astimezone(timezone).date(),
+            'fiscal_position_id': self.fiscal_position_id.id,
+            'branch_id' : self.session_id.branch_id.id,
+            'invoice_line_ids': [(0, None, self._prepare_invoice_line(line)) for line in self.lines],
+        }
+        return vals
+
+
     def _create_account_move(self, dt, ref, journal_id, company_id):
 
         pos_session_obj = self.env['pos.session'].search([('name','=', ref)])

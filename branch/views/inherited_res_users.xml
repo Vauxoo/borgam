@@ -13,7 +13,7 @@
                         <field name="branch_ids" widget="many2many_tags" domain="[('company_id', 'in', company_ids)]" context="{'allow_branch':True}"/>
                     </group>
                     <group>
-                        <field name="branch_id" domain="[('id', 'in', branch_ids)]"/>
+                        <field name="branch_id" context="{'allow_branch':True}" domain="[('id', 'in', branch_ids)]"/>
                     </group>
                 </xpath>
             </field>
