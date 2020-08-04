@@ -8,11 +8,11 @@
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
             <field name="company_id" position="after">
-                <field name="branch_id"/>
+                <field name="branch_id" widget="selection"/>
             </field>
             
             <xpath expr="//notebook/page/field[@name='bom_line_ids']/tree/field[@name='product_id']" position="after">
-                <field name="branch_id"/>
+                <field name="branch_id" widget="selection"/>
             </xpath>
         </field>
     </record>
@@ -23,11 +23,11 @@
         <field name="inherit_id" ref="mrp.mrp_production_form_view" />
         <field name="arch" type="xml">
             <field name="company_id" position="after">
-                <field name="branch_id"/>
+                <field name="branch_id" widget="selection"/>
             </field>
 
             <xpath expr="//notebook/page/field[@name='finished_move_line_ids']/tree/field[@name='product_id']" position="after">
-                <field name="branch_id"/>
+                <field name="branch_id" widget="selection"/>
             </xpath>
         </field>
     </record>
@@ -40,7 +40,7 @@
 
 
             <xpath expr="//tree/field[@name='product_id']" position="after">
-                <field name="branch_id"/>
+                <field name="branch_id" widget="selection"/>
             </xpath>
 
         </field>
@@ -54,7 +54,7 @@
 
 
             <xpath expr="//tree/field[@name='product_id']" position="after">
-                <field name="branch_id"/>
+                <field name="branch_id" widget="selection"/>
             </xpath>
             
         </field>
@@ -66,7 +66,7 @@
         <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit" />
         <field name="arch" type="xml">
                     <field name="product_id" position="after">
-                        <field name="branch_id"/>
+                        <field name="branch_id" widget="selection"/>
                     </field>
         </field>
     </record>

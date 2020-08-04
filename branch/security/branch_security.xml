@@ -74,14 +74,14 @@
         <field name="name">Sale Report Branch Manager</field>
         <field name="model_id" ref="sale.model_sale_report"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">[('branch_id','in',user.branch_ids.ids)]</field>
+        <field name="domain_force">['|',('branch_id','=',False),('branch_id','in',user.branch_ids.ids)]</field>
     </record>
 
     <record id="purchase_report_branch_manager_rule" model="ir.rule">
         <field name="name">Purchase Report Branch Manager</field>
         <field name="model_id" ref="purchase.model_purchase_report"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">[('branch_id','in',user.branch_ids.ids)]</field>
+        <field name="domain_force">['|',('branch_id','=',False),('branch_id','in',user.branch_ids.ids)]</field>
     </record>
 
 
@@ -90,14 +90,14 @@
         <field name="name">account Branch Manager</field>
         <field name="model_id" ref="account.model_account_move"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">[('branch_id','in',user.branch_ids.ids)]</field>
+        <field name="domain_force">['|',('branch_id','=',False),('branch_id','in',user.branch_ids.ids)]</field>
     </record>
 
     <record id="account_move_line_branch_manager_rule" model="ir.rule">
         <field name="name">Account line Branch Manager</field>
         <field name="model_id" ref="account.model_account_move_line"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">[('branch_id','in',user.branch_ids.ids)]</field>
+        <field name="domain_force">['|',('branch_id','=',False),('branch_id','in',user.branch_ids.ids)]</field>
     </record>
 
     <record id="purchase_branch_rule" model="ir.rule">

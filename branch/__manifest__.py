@@ -2,7 +2,7 @@
 
 {
     'name': 'Multiple Branch Unit Operation Setup for All Applications Odoo',
-    'version': '13.0.5.2',
+    'version': '13.0.5.3',
     'category': 'Sales',
     'summary': 'Multiple Branch Management Multi Branch app Multiple Unit multiple Operating unit sales branch Sales Purchase branch Invoicing branch billing Voucher branch warehouse branch Payment branch Accounting Reports for single company Multi Branches multi company',
     "description": """
@@ -90,7 +90,7 @@ operating-Unit Operation for POS,operating-Unit Operation for Sales,operating-Un
     'website': 'http://www.browseinfo.in',
     "price": 129.00,
     "currency": 'EUR',
-    'depends': ['base', 'sale_management', 'purchase', 'stock', 'mrp' ,'account', 'purchase_stock'],
+    'depends': ['base', 'sale_management', 'purchase', 'stock', 'mrp' ,'account', 'purchase_stock','inter_company_rules'],
     'data': [
         'security/branch_security.xml',
         'security/ir.model.access.csv',

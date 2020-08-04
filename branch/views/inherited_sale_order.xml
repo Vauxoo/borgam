@@ -11,7 +11,7 @@
                     <!-- Add your fields or attributes here -->
                     <group string="Branch" name="branch">
                         <group>
-                            <field name="branch_id"/>
+                            <field name="branch_id" widget="selection"/>
                         </group>
                     </group>
                 </xpath>

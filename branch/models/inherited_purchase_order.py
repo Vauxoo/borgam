@@ -103,7 +103,6 @@ class PurchaseOrder(models.Model):
 
         return result
 
-
     def _prepare_sale_order_data(self, name, partner, company, direct_delivery_address):
         """ Generate the Sales Order values from the PO
             :param name : the origin client reference
@@ -120,6 +119,7 @@ class PurchaseOrder(models.Model):
         warehouse = company.warehouse_id and company.warehouse_id.company_id.id == company.id and company.warehouse_id or False
         if not warehouse:
             raise Warning(_('Configure correct warehouse for company(%s) from Menu: Settings/Users/Companies' % (company.name)))
+        print("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",warehouse.branch_id)
         return {
             'name': self.env['ir.sequence'].sudo().next_by_code('sale.order') or '/',
             'company_id': company.id,

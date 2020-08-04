@@ -8,11 +8,11 @@
             <field name="arch" type="xml">
                 <field name="date" position="before">
                     <!-- Add your fields or attributes here -->
-                        <field name="branch_id"/>
+                        <field name="branch_id" widget="selection"/>
                 </field>
 
                 <xpath expr="//field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
-                    <field name='branch_id'/>
+                    <field name='branch_id' widget="selection"/>
                 </xpath>
 
                 <xpath expr="//field[@name='line_ids']" position="attributes">

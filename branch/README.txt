@@ -78,3 +78,10 @@ Date 28th july 2020
 version 13.0.5.2
 issue solve:-
 	- multi company record rule conflict with out user record rules , so added global record rule for sale report , account report , purchase report.
+
+Date 28th july 2020
+version 13.0.5.3
+issue solve:-
+	- sale , invoice issue solve
+	- multi company record issue solve.
+	- branch only select from m2o.

@@ -10,7 +10,7 @@
                 <xpath expr="//field[@name='product_id']"
                        position="after">
                     <!-- Add your fields or attributes here -->
-                        <field name="branch_id"/>
+                        <field name="branch_id" widget="selection"/>
                 </xpath>
             </field>
         </record>

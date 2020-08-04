@@ -20,4 +20,6 @@ class ResBranch(models.Model):
 		# 	args += [('id','in',user_id.branch_ids.ids)]
 		if 'allow_branch' not in self.env.context:
 			args += [('id','in',user_id.branch_ids.ids)]
+		# if 'all_branch' in self.env.context:
+		# 	args = []
 		return super(ResBranch, self)._name_search(name, args, operator, limit, name_get_uid=name_get_uid) 

@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
                 <field name="incoterm_id" position="after">
-                        <field name="branch_id"/>
+                        <field name="branch_id" widget="selection"/>
                 </field>
                 <xpath expr="//field[@name='order_line']" position="attributes">
                     <attribute name="context">{'branch_id' : branch_id}</attribute>

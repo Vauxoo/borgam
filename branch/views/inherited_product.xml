@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="product.product_template_only_form_view" />
             <field name="arch" type="xml">
                 <field name="company_id" position="after">
-                    <field name="branch_id"/>
+                    <field name="branch_id" widget="selection"/>
                 </field>
             </field>
         </record>
@@ -17,7 +17,7 @@
             <field name="inherit_id" ref="product.product_normal_form_view"/>
             <field name="arch" type="xml">
                 <field name="company_id" position="after">
-                    <field name="branch_id"/>
+                    <field name="branch_id" widget="selection"/>
                 </field>
             </field>
         </record>
