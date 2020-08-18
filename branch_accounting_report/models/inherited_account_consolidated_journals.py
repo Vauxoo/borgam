@@ -22,7 +22,9 @@ class report_account_consolidated_journal_in(models.AbstractModel):
             else:
                 branches = tuple(list(set(branch_list)))
                 account_query = """ AND "account_move_line".branch_id in %s""" % (str(tuple(branches)))
-
+        else:
+            branches = tuple(list(set(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids)))
+            account_query = """ AND "account_move_line".branch_id in %s""" % (str(tuple(branches)))
         lines = []
         convert_date = self.env['ir.qweb.field.date'].value_to_html
         select = """

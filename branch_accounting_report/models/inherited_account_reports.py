@@ -39,8 +39,7 @@ class AccountReport(models.AbstractModel):
         if self.filter_comparison:
             self._init_filter_comparison(options, previous_options=previous_options)
 
-        # if self.filter_branch:
-        #     self._init_filter_branch(options, previous_options=previous_options)
+
 
         filter_list = [attr for attr in dir(self)
                        if (attr.startswith('filter_') or attr.startswith('order_')) and attr not in ('filter_date', 'filter_comparison') and len(attr) > 7 and not callable(getattr(self, attr))]

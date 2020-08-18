@@ -124,9 +124,6 @@ class ReportAgedPartnerBalance(models.AbstractModel):
         # +120     : 2018-10-10
         ctx = self._context
 
-        print(self._context,'---------------------cscscscscscscssccc')
-
-
         periods = {}
         date_from = fields.Date.from_string(date_from)
         start = date_from
@@ -173,10 +170,11 @@ class ReportAgedPartnerBalance(models.AbstractModel):
             arg_list += (tuple(partner_ids or [0]),)
         
         arg_list += (date_from, tuple(company_ids))
-
+        branch_clause = 'AND (l.branch_id IN %s)'
         if ctx.get('branch_ids'):
-            branch_clause = 'AND (l.branch_id IN %s)'
             arg_list += (tuple(ctx['branch_ids'].ids),)
+        else:
+            arg_list += (tuple(self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids),)
 
         branch_list = []
 
@@ -211,7 +209,7 @@ class ReportAgedPartnerBalance(models.AbstractModel):
         if ctx.get('branch_ids'):
             branch_ids = [branch.id for branch in ctx['branch_ids']]
         else:
-            branch_ids = []        
+            branch_ids = [self.env['res.users'].browse(self._context.get('uid')).branch_ids.ids]        
         lines = dict((partner['partner_id'] or False, []) for partner in partners)
         
         if not partner_ids:
