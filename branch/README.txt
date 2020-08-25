@@ -85,3 +85,10 @@ issue solve:-
 	- sale , invoice issue solve
 	- multi company record issue solve.
 	- branch only select from m2o.
+
+
+
+Date 25th aug 2020
+version 13.0.5.4
+issue solve:-
+	- uncomment account statement files from branch module.

@@ -2,7 +2,7 @@
 
 {
     'name': 'Multiple Branch Unit Operation Setup for All Applications Odoo',
-    'version': '13.0.5.3',
+    'version': '13.0.5.4',
     'category': 'Sales',
     'summary': 'Multiple Branch Management Multi Branch app Multiple Unit multiple Operating unit sales branch Sales Purchase branch Invoicing branch billing Voucher branch warehouse branch Payment branch Accounting Reports for single company Multi Branches multi company',
     "description": """
@@ -104,7 +104,7 @@ operating-Unit Operation for POS,operating-Unit Operation for Sales,operating-Un
         'views/inherited_purchase_order.xml',
         'views/inherited_stock_warehouse.xml',
         'views/inherited_stock_location.xml',
-        # 'views/inherited_account_bank_statement.xml',
+        'views/inherited_account_bank_statement.xml',
         'wizard/inherited_account_payment.xml',
         'views/inherited_stock_inventory.xml',
         'views/inherited_product.xml',
