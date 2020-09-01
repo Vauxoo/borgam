@@ -35,3 +35,15 @@
 	path = xmarts/l10n-mx-pos-global-invoice
 	url = git@github.com:xmarts/l10n-mx-pos-global-invoice.git
 	branch = 13.0
+[submodule "mexico"]
+	path = mexico
+	url = git@git.vauxoo.com:Vauxoo/mexico.git
+	branch = 13.0
+[submodule "vendor-bills"]
+	path = vendor-bills
+	url = git@git.vauxoo.com:Vauxoo/vendor-bills.git
+	branch = 13.0
+[submodule "pasteleria"]
+	path = pasteleria
+	url = git@git.vauxoo.com:Vauxoo/pasteleria.git
+	branch = 13.0
