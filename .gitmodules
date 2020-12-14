@@ -44,3 +44,7 @@
 	path = pasteleria
 	url = git@git.vauxoo.com:Vauxoo/pasteleria.git
 	branch = 13.0
+[submodule "xunnel-account"]
+	path = xunnel-account
+	url = git@git.vauxoo.com:vauxoo/xunnel-account.git
+	branch = 13.0
